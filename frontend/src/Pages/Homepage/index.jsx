@@ -45,14 +45,14 @@ function Home() {
     <div className={style.bg}>
         <div className={style.navbar}>
             <div className={style.nav_logo}>
-                <p className={style.nav_text}>AptoTrade</p>
+                <p className={style.nav_text}>SubsHUB</p>
             </div>
-            <div>
+            {/* <div>
                 <Link to='docs' className={style.docs_button}>Docs &#8599;</Link>
                 <Link to='status' className={style.docs_button}>Status &#8599;</Link>
-            </div>
-            <Link to='trading' className={style.nav_button}>
-            <div className={style.button}>Trade Now</div>
+            </div> */}
+            <Link to='login' className={style.nav_button}>
+            <div className={style.button}>Sign In</div>
             </Link>
         </div>
         <div className={style.herosection}>
