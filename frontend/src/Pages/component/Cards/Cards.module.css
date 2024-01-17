@@ -1,0 +1,173 @@
+/* Colors and fonts */
+:root {
+    --regal-blue: #034378;
+    --san-juan: #2d4e68;
+    --bermuda: #77d7b9;
+    --white: #fff;
+    --black: #000;
+  }
+  
+  /* Clear-fix */
+  .cf:before,
+  .cf:after {
+    content: '';
+    display: table;
+  }
+  
+  .cf:after {
+    clear: both;
+  }
+  
+  /* Base styles */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: linear-gradient(to right, var(--regal-blue), var(--san-juan));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+  }
+  
+  .row {
+    max-width: 900px;
+    margin: 50px auto 0;
+  }
+  
+  .card {
+    float: left;
+    padding: 0 1.7rem;
+    width: 50%;
+  }
+  
+  .card .menu-content {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .card .menu-content li {
+    display: inline-block;
+  }
+  
+  .card .menu-content a {
+    color: var(--white);
+  }
+  
+  .card .menu-content span {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: 'Open Sans';
+    transform: translate(-50%, 0);
+  }
+  
+  .card .wrapper {
+    background-color: var(--white);
+    min-height: 540px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 19px 38px rgba(var(--black), 0.3), 0 15px 12px rgba(var(--black), 0.2);
+  }
+  
+  .card .wrapper:hover .data {
+    transform: translateY(0);
+  }
+  
+  .card .data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(calc(70px + 1em));
+    transition: transform 0.3s;
+  }
+  
+  .card .data .content {
+    padding: 1em;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .card .author {
+    font-size: 12px;
+  }
+  
+  .card .title {
+    margin-top: 10px;
+  }
+  
+  .card .text {
+    height: 70px;
+    margin: 0;
+  }
+  
+  .card input[type='checkbox'] {
+    display: none;
+  }
+  
+  .card input[type='checkbox']:checked + .menu-content {
+    transform: translateY(-60px);
+  }
+  
+  /* Additional styles specific to each card example */
+  /* Example 1 specific styles */
+  .example-1 .wrapper {
+    background: url('https://images.unsplash.com/photo-1496979551903-46e46589a88b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=cda12b505afa1beb06e49d89014cbd65&auto=format&fit=crop&w=634&q=80') 20% 1% / cover no-repeat;
+  }
+  
+  .example-1 .date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--bermuda);
+    color: var(--white);
+    padding: 0.8em;
+  }
+  
+  .example-1 .date span {
+    display: block;
+    text-align: center;
+  }
+  
+  .example-1 .date .day {
+    font-weight: 700;
+    font-size: 24px;
+    text-shadow: 2px 3px 2px rgba(var(--black), 0.18);
+  }
+  
+  .example-1 .date .month {
+    text-transform: uppercase;
+  }
+  
+  .example-1 .date .month,
+  .example-1 .date .year {
+    font-size: 12px;
+  }
+  
+  .example-1 .content {
+    background-color: var(--white);
+    box-shadow: 0 5px 30px 10px rgba(var(--black), 0.3);
+  }
+  
+  .example-1 .title a {
+    color: #00000080; /* Lighten black by 50% */
+  }
+  
+  /* ... Continue with the rest of your styles ... */
+  
+  /* Example 2 specific styles */
+  /* ... Adapt the styles for Example 2 similarly ... */
+  
