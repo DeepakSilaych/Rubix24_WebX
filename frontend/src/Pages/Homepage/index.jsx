@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import UserData from './Userdata';
+// import UserData from './Userdata';
 import style from './home.module.css'
 import { Link } from 'react-router-dom'
 // import Video from "../../assets/check.mp4";
@@ -7,27 +7,15 @@ import { Link } from 'react-router-dom'
 // import {Github, Facebook, Linkedin} from 'lucide-react'
 // import logo from '../../assets/logo.svg'
 
-const API = "https://api.coingecko.com/api/v3/simple/price?ids=aptos%2Cbitcoin%2Cethereum&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=true&include_last_updated_at=false&precision=2";
+// const API = "https://api.coingecko.com/api/v3/simple/price?ids=aptos%2Cbitcoin%2Cethereum&vs_currencies=usd&include_market_cap=false&include_24hr_vol=false&include_24hr_change=true&include_last_updated_at=false&precision=2";
 
-function Home() {
+function Home() {   
     const [users, setUsers] = useState([]);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-    const fetchUsers = async (url)=>{
-        try{
-            const res = await fetch(url);
-            const data = await res.json();
-            if(data.length >0){
-                setUsers(data);
-            }
-            setUsers(data)
-        }catch(e){
-            console.error(e);
-            
-        }
-    }
+
     useEffect(() => {
-        fetchUsers(API);
+        // fetchUsers(API);
 
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
@@ -64,9 +52,10 @@ function Home() {
             </div>
         </div>
         <div className= {style.information}>
+   {/* Manage your subscriptions easily with SubsHUB */}
             <div className={style.inside}>
                 <div className={style.inside_a}>
-                    <UserData users = {users}/>
+                  
                 </div>
 
             </div>
