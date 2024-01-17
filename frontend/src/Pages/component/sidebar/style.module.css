@@ -1,0 +1,78 @@
+.hoverbg{
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 8%, rgba(0,0,0,0) 100%); 
+  transition: width 0.1s;
+}
+
+.hoveredbg{
+  width: 100vw;
+  transition: width 0.1s;
+}
+
+
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  color: #fff;
+  padding: 20px;
+  width: 8rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.logo img {
+  width: 100%;
+  max-width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.sidebarMenu {
+  height: max-content;
+  margin-bottom: 20px;
+}
+
+.sidebarMenu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebarMenu li {
+  margin: 2rem 0
+}
+
+.sidebarMenu li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 400;
+  transition: color 0.1s;
+}
+
+.sidebarMenu li a:hover {
+  color: #fff;
+}
+
+.profileBottom .profileicon{
+  height: 3rem;
+  width: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.profileBottom :hover .profileicon{
+  border-radius: 50%;
+  margin: 0;
+  color: white;
+}
