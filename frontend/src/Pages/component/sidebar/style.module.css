@@ -10,7 +10,7 @@
 }
 
 .hoveredbg{
-  /* width: 150vw; */
+  width: 30vw;
   transition: width 0.1s;
 }
 
