@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
     'OTTsubcription',
     'User',
     'rest_framework',
