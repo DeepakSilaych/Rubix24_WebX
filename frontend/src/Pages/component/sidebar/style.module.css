@@ -10,7 +10,7 @@
 }
 
 .hoveredbg{
-  width: 30vw;
+  /* width: 30vw; */
   transition: width 0.1s;
 }
 
@@ -48,17 +48,17 @@
 }
 
 .sidebarMenu li {
-  margin: 2rem 0
+  margin: 2rem 0;
 }
 
 .sidebarMenu li a {
   text-decoration: none;
-  color: rgba(167, 231, 247, 0.8);
+  color: white;
   font-size: 1rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 500;
   transition: color 0.1s;
-}
+} 
 
 .sidebarMenu li a:hover {
   color: #61DBFB;
@@ -67,11 +67,5 @@
 .profileBottom .profileicon{
   height: 3rem;
   width: 3rem;
-  color: rgba(97, 219, 251,0.8);
 }
 
-.profileBottom :hover .profileicon{
-  border-radius: 50%;
-  margin: 0;
-  color: #61DBFB;
-}
