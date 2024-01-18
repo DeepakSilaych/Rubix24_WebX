@@ -5,7 +5,7 @@
   top: 0;
   left: 0;
   z-index: 5;
-  background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 8%, rgba(0,0,0,0) 100%); 
+  background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%); 
   transition: width 0.1s;
 }
 
@@ -13,7 +13,6 @@
   width: 100vw;
   transition: width 0.1s;
 }
-
 
 .sidebar{
   position: fixed;
@@ -54,25 +53,25 @@
 
 .sidebarMenu li a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(167, 231, 247, 0.8);
   font-size: 1rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   transition: color 0.1s;
 }
 
 .sidebarMenu li a:hover {
-  color: #fff;
+  color: #61DBFB;
 }
 
 .profileBottom .profileicon{
   height: 3rem;
   width: 3rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(97, 219, 251,0.8);
 }
 
 .profileBottom :hover .profileicon{
   border-radius: 50%;
   margin: 0;
-  color: white;
+  color: #61DBFB;
 }
