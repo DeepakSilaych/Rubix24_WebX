@@ -17,7 +17,6 @@ function Dashboard() {
     <Layout>
       <div className={style.dashboard}>
         <div className={style.dashboard_chart}>
-          <h2>Users</h2>
           <BarChart />
         </div>
         <div className={style.dashboard_otts}>
