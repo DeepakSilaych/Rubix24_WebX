@@ -7,6 +7,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
+from .decorator import token_req
 from django.shortcuts import get_object_or_404
 from datetime import date
 from rest_framework.authentication import TokenAuthentication
@@ -16,8 +17,9 @@ from rest_framework.authentication import TokenAuthentication
 # APIs:
 #DASHOBOARD
 # currently subscirbed otts list
+@token_req
 def currentsubscriptions(request):
-    subs = OTTSubscription.objects.filter(user=request.user, subscirbed_till__gte=datetime.now().date())
+    subs = OTTSubscription.objects.filter(user=request.user)
     serializer = OTTSubscriptionSerializer(subs, many=True)
     return Response(serializer.data)
 

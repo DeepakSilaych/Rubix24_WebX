@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import datetime
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
     'OTTsubcription',
     'User',
     'rest_framework',
@@ -132,10 +134,21 @@ DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+DEFAULT_AUTHENTICATION_CLASSES = (
+    'rest_framework_simplejwt.authentication.JWTAuthentication',
+)
+
+DEFAULT_RENDERER_CLASSES = (
+    'rest_framework.renderers.JSONRenderer',
+)
+
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': DEFAULT_AUTHENTICATION_CLASSES,
+    'DEFAULT_RENDERER_CLASSES': DEFAULT_RENDERER_CLASSES,
+    'JWT_AUTH': {
+        'JWT_EXPIRATION_DELTA': datetime.timedelta(hours=1),
+        'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=1),
+    }
 }
 AUTH_USER_MODEL = 'User.User'
 
@@ -147,12 +160,9 @@ DEFAULT_AUTHENTICATION_CLASSES = (
     'rest_framework_simplejwt.authentication.JWTAuthentication',
 )
 
-
-
 AUTHENTICATION_BACKENDS = [
     'User.models.UserManager',
-    'django.contrib.auth.backends.ModelBackend',
-]
+    ]
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",

@@ -26,19 +26,32 @@ class UserManager(BaseUserManager):
         user.is_staff = True
         user.save(using=self._db)
         return user
+    
+    def authenticate(self, request, username, password):
+        try:
+            user = User.objects.get(email=username)
+            if user.check_password(password):
+                return user
+        except User.DoesNotExist:
+            return None
+        
+    def get_user(self, user_id):
+        try:
+            return User.objects.get(pk=user_id)
+        except User.DoesNotExist:
+            return None
 
 class User(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=50, blank = False, null = False)
     username = models.CharField(max_length=70, unique= True, null = True, blank = False)
     email = models.CharField(max_length=50, unique = True, null = True, blank = True)
-    password = models.CharField(max_length=255, null = True, blank = True)
     created = models.DateTimeField(auto_now_add=True, null = False, blank = False)
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-    friends = models.ManyToManyField('self', blank=True, null= True, symmetrical=True)
+    friends = models.ManyToManyField('self', blank=True, symmetrical=True)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'password']
+    REQUIRED_FIELDS = ['username']
 
     objects = UserManager()
 
