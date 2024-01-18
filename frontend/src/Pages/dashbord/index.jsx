@@ -9,12 +9,12 @@ function Dashboard() {
   const [showAllb, setShowAllb] = useState(false);
 
 
-  const visibleData = showAlla ? data : data.slice(0, 4);
-  const visibleDatab = showAllb ? data : data.slice(0, 4);
+  const visibleData = showAlla ? data : data.slice(0, 5);
+  const visibleDatab = showAllb ? data : data.slice(0, 5);
 
 
   return (
-    <Layout>
+    <Layout color={"rgb(16, 57, 18)"}>
       <div className={style.dashboard}>
         <div className={style.dashboard_chart}>
           <BarChart />

@@ -1,12 +1,9 @@
-import React from 'react';
-// import './App.css';
+import React from 'react'
 
-function App() {
+function Family() {
   return (
-    <div className="App">
-      <h1>Hello, World!</h1>
-    </div>
-  );
+    <div>Family</div>
+  )
 }
 
-export default App;
+export default Family

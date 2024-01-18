@@ -1,0 +1,47 @@
+.notfound{
+  height: 100vh;
+  width: 100%;
+  font-weight: 600;
+  background-color: antiquewhite;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Nunito', sans-serif;
+  color: black;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1.5rem;
+  max-width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.notfound h1{
+  font-size: 6rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+}
+
+.notfound h2{
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+  margin-bottom: 2rem;
+}
+
+.notfound p{
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5em;
+}
+

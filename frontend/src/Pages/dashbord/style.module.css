@@ -65,32 +65,35 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  overflow-y: scroll;
-  background-color: cadetblue;
-  color: black
+  color: #fff;
 }
 
-.dashboard ::-webkit-scrollbar{
-  width: 0;
-  height: 0;
-  background: transparent;
-}
 
 .dashboard_chart{
-  width: 100%;
+  width: 90%;
+  margin: 1rem auto;
   height: min-content;
+  background-color: #fff;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+  padding: 1rem;  
+  border-radius: 1rem;
 }
+
 
 .chartbox .durationOptions button{
   margin: 0 1rem;
+  padding: .5rem 1rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.5); 
+  color: #000;
 }
 
 .barchart{
-  width: 80%;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 1rem rgba(0,0,0,0.5);
+  width: 100%;
   margin: 1rem auto;
 }
 

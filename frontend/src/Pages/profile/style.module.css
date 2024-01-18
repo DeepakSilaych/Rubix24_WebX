@@ -1,0 +1,120 @@
+.profile{
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(to right, rgba(0,0,0,1) 10%, rgb(1, 1, 63) 100%); */
+  color: white;
+}
+
+.profile h1{
+  font-size: 5rem;
+  text-align: center;
+  margin: 3rem 0 5rem 0;
+}
+
+.profile_head{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-evenly
+}
+
+.profile_image{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_image img{
+  width: 100%;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+.profile_info{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.profile_info p{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.ottlist{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 0;
+}
+
+.ottlist h2{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.ottlist_list{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.ottlist_item{
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ottlist_item img{
+  max-width: 100%;
+  height: auto;
+}
+
+.friendslist{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5rem 0;
+}
+
+.friendslist h2{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.friendslist_list{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.friendslist_item{
+  width: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.friendslist_item img{
+  max-width: 100%;
+  border-radius: 50%;
+  height: auto;
+}
+
+

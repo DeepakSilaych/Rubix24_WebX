@@ -66,7 +66,52 @@ const data = [
     completion: "50%",
     daysLeft: "10",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png"
-  }
+  },
+  {
+    title: "Spotify",
+    price: "490.000",
+    startingDate: "20-10-2020",
+    endingDate: "20-11-2020",
+    completion: "90%",
+    daysLeft: "10",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/1200px-Spotify_logo_without_text.svg.png"
+  },
+  {
+    title: "Netflix",
+    price: "490.000",
+    startingDate: "20-10-2020",
+    endingDate: "20-11-2020",
+    completion: "50%",
+    daysLeft: "10",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png"
+  },
+  {
+    title: "Spotify",
+    price: "490.000",
+    startingDate: "20-10-2020",
+    endingDate: "20-11-2020",
+    completion: "90%",
+    daysLeft: "10",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/1200px-Spotify_logo_without_text.svg.png"
+  },
+  {
+    title: "Netflix",
+    price: "490.000",
+    startingDate: "20-10-2020",
+    endingDate: "20-11-2020",
+    completion: "50%",
+    daysLeft: "10",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1200px-Netflix_2015_logo.svg.png"
+  },
+  {
+    title: "Spotify",
+    price: "490.000",
+    startingDate: "20-10-2020",
+    endingDate: "20-11-2020",
+    completion: "90%",
+    daysLeft: "10",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/1200px-Spotify_logo_without_text.svg.png"
+  },
 ];
 
 function BarChart() {

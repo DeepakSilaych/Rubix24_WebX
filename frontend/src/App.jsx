@@ -6,7 +6,9 @@ import Family from "./Pages/family/index";
 import OTT from "./Pages/ott/index";
 import Index from "./Pages/Homepage/index";
 import Dashboard from './Pages/dashbord';
-import Login from "./pages/Login";
+import Login from "./Pages/Login";
+import Profile from "./Pages/profile";
+import NotFound from "./Pages/notfound";
 
 function App() {
 
@@ -19,6 +21,10 @@ function App() {
         <Route path="/family" element={< Family/>} />
         <Route path="/ott" element={< OTT/>} />
         <Route path='/dashboard' element={<Dashboard/>} />
+
+        <Route path="/profile" element={< Profile/>} />
+
+        <Route path="*" element={< NotFound />} />
       </Routes>
     </Router>
   );

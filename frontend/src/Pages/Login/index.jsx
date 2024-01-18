@@ -4,7 +4,7 @@ import RegisterForm from "./register";
 
 const Login = () => {
   
-    const [login, setLogin] = useState(false);
+    const [login, setLogin] = useState(true);
 
   return (
     <div className="h-screen w-screen text-center flex flex-col items-center justify-around">

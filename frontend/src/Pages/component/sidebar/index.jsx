@@ -26,7 +26,7 @@ function Sidebar() {
               <Link to="/ott">OTT</Link>
             </li>
             <li>
-              <Link to="/friends">Friends</Link>
+              <Link to="/family">Family</Link>
             </li>
             <li>
               <Link to="/optimize">Optimize</Link>
