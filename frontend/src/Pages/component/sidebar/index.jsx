@@ -3,8 +3,11 @@ import style from './style.module.css';
 import { Link } from 'react-router-dom';
 import { CircleUserRound } from 'lucide-react'
 
-function Sidebar() {
+function Sidebar({color}) {
   const [isHovered, setIsHovered] = useState(false);
+  color = 'white'
+
+  
 
   return (
     <>
@@ -20,21 +23,21 @@ function Sidebar() {
         <div className={style.sidebarMenu}>
           <ul>
             <li>
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/dashboard" style={{color:color}}>Dashboard</Link>
             </li>
             <li>
-              <Link to="/ott">OTT</Link>
+              <Link to="/ott" style={{color:color}}>OTT</Link>
             </li>
             <li>
-              <Link to="/family">Family</Link>
+              <Link to="/family" style={{color:color}}>Family</Link>
             </li>
             <li>
-              <Link to="/optimize">Optimize</Link>
+              <Link to="/optimize" style={{color:color}}>Optimize</Link>
             </li>
           </ul>
         </div>
         <div className={style.profileBottom}>
-          <Link to="/profile"> <CircleUserRound className={style.profileicon}/></Link>
+          <Link to="/profile"> <CircleUserRound className={style.profileicon} style={{color:color}}/></Link>
         </div>
       </div>
     </>

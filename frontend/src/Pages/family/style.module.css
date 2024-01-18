@@ -1,23 +1,24 @@
-.container{
+.container {
   min-height: 100vh;
-  color: white
+  color: white;
 }
 
-.title{
+.title {
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
   margin: 3rem 0;
 }
 
-.addmember{
+.addmember {
   margin: 2rem auto;
   width: 80%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.addmember button{
+.addmember button {
   background-color: white;
   color: black;
   border: none;
@@ -26,28 +27,29 @@
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.addmember h2{
+.addmember h2 {
   font-size: 2rem;
   font-weight: 700;
 }
 
-.memberlist{
+.memberlist {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: column;
 }
 
-.membercard{
+.membercard {
   width: 90%;
   height: 5rem;
   margin: 1rem auto;
-  background-color: #1f1f1f;
+  background-color: whitesmoke;
+  color: black;
   border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -55,21 +57,21 @@
   padding: 1rem;
 }
 
-.membercardexpanded{
+.membercardexpanded {
   height: max-content;
 }
 
-.membername{
+.membername {
   width: 25%;
   text-align: left;
 }
 
-.memberemail{
+.memberemail {
   width: 25%;
   text-align: left;
 }
 
-.memberott{
+.memberott {
   width: 40%;
   display: flex;
   flex-direction: row;
@@ -78,11 +80,68 @@
   height: 5rem;
 }
 
-.ott{
+.ott {
   margin-right: 1rem;
   position: relative;
 }
 
 .showMoreButton {
   width: 10%;
+}
+
+.addMemberPopupContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addMemberPopup {
+  position: fixed;
+  min-width: 20rem;
+  min-height: 10rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1f1f1f;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  z-index: 999;
+}
+
+.addMemberPopup label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.addMemberPopup input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.addMemberPopup button {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  margin-right: 1rem;
+}
+
+.addMemberPopup button:last-child {
+  background-color: #fd6660;
+  color: white;
 }

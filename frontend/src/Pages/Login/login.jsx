@@ -8,20 +8,36 @@ const LoginForm = ({changeLoginState}) => {
 
   function handleLogin(e) {
     console.log(detail);
-    axios.post("http://localhost:3001/auth/login", detail)
-    .then((res) => {
-        dispatch(setLogin({ user: res.data.user, token: res.data.token }));
-        console.log(res.data);
-        console.log(res.data.user);
-        navigate("/home");
+
+    // axios.post("http://127.0.0.1:8000/api/auth/login/", detail)
+    // .then((res) => {
+    //     dispatch(setLogin({ user: res.data.user, token: res.data.token }));
+    //     console.log(res.data);
+    //     console.log(res.data.user);
+    //     navigate("/home");
+    // })
+    // .catch((err) => {
+    //     if (err.response.status === 401) {
+    //         alert("Invalid Credentials");
+    //     }
+    //     console.log(err);
+    // });
+
+    axios.post("http://127.0.0.1:8000/api/auth/login/",{
+        email: detail.email,
+        password: detail.password,
     })
-    .catch((err) => {
-        if (err.response.status === 401) {
-            alert("Invalid Credentials");
-        }
-        console.log(err);
+    .then(response => {
+      localStorage.setItem('accessToken', response.data.access);
+      localStorage.setItem('refreshToken', response.data.refresh);
+      navigate("/dashboard");
+    })
+    .catch(error => {
+      console.log(error);
+      alert("Invalid Credentials");
     });
-  }
+  } 
+
   const [detail, setDetail] = useState({
     email: "",
     password: "",

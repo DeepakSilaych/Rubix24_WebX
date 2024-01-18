@@ -4,9 +4,28 @@ import style from './style.module.css';
 
 function Family() {
   const [expandedMember, setExpandedMember] = useState(null);
+  const [isAddMemberPopupOpen, setAddMemberPopupOpen] = useState(false);
+  const [newMemberEmail, setNewMemberEmail] = useState('');
 
   const toggleExpand = (memberId) => {
     setExpandedMember((prev) => (prev === memberId ? null : memberId));
+  };
+
+  const openAddMemberPopup = () => {
+    setAddMemberPopupOpen(true);
+  };
+
+  const closeAddMemberPopup = () => {
+    setAddMemberPopupOpen(false);
+  };
+
+  const handleNewMemberEmailChange = (e) => {
+    setNewMemberEmail(e.target.value);
+  };
+
+  const handleAddMember = () => {
+    console.log(newMemberEmail);
+    closeAddMemberPopup();
   };
 
   return (
@@ -16,7 +35,7 @@ function Family() {
           <h1 className={style.title}>Family</h1>
           <div className={style.addmember}>
             <h2>Connected Family Members or Friends</h2>
-            <button>Add New Member</button>
+            <button onClick={openAddMemberPopup}>Add New Member</button>
           </div>
           <div className={style.member}>
             <div className={style.memberlist}>
@@ -32,17 +51,28 @@ function Family() {
                     ))}
                   </div>
                   {member.ott.length > 6 ? (
-                      <button className={style.showMoreButton} onClick={() => toggleExpand(member.id)}>
-                        {expandedMember === member.id ? 'Show Less' : 'Show More'}
-                      </button>
-                    ):(
-                     <div className={style.showMoreButton}/> 
-                    )
-                  }
+                    <button className={style.showMoreButton} onClick={() => toggleExpand(member.id)}>
+                      {expandedMember === member.id ? 'Show Less' : 'Show More'}
+                    </button>
+                  ) : (
+                    <div className={style.showMoreButton} />
+                  )}
                 </div>
               ))}
             </div>
           </div>
+          {isAddMemberPopupOpen && (
+          <div className={style.addMemberPopupContainer}>
+            <div className={style.addMemberPopup}>
+              <div>
+                <label>Member's Email:</label>
+                <input type="email" value={newMemberEmail} onChange={handleNewMemberEmailChange} placeholder='example@mail.com'/>
+              </div>
+              <button onClick={handleAddMember}>Add</button>
+              <button onClick={closeAddMemberPopup}>Cancel</button>
+            </div>
+          </div>
+          )}
         </div>
       </Layout>
     </div>
@@ -50,6 +80,7 @@ function Family() {
 }
 
 export default Family;
+
 
 const data = [
   {
