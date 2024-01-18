@@ -36,12 +36,14 @@ INSTALLED_APPS = [
     'OTTsubcription',
     'User',
     'rest_framework',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 MIDDLEWARE = [
@@ -52,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -150,4 +154,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "http://localhost:5173",
+]

@@ -9,6 +9,8 @@ import Dashboard from './Pages/dashbord';
 import Login from "./Pages/Login";
 import Profile from "./Pages/profile";
 import NotFound from "./Pages/notfound";
+import OTTPage from "./Pages/ott/ottpage";
+import axios from "axios";
 
 function App() {
 
@@ -20,6 +22,7 @@ function App() {
         <Route path="/optimise" element={< Optimise/>} />
         <Route path="/family" element={< Family/>} />
         <Route path="/ott" element={< OTT/>} />
+        <Route path="/ott/netflix" element={< OTTPage/>} />
         <Route path='/dashboard' element={<Dashboard/>} />
 
         <Route path="/profile" element={< Profile/>} />
