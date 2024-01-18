@@ -20,5 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('User.urls')),
+    path('home/', include('OTTsubcription.urls'))
     
 ]
