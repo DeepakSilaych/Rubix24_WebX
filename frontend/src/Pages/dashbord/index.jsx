@@ -13,17 +13,6 @@ function Dashboard() {
   const visibleDatab = showAllb ? data : data.slice(0, 4);
 
 
-  const containerStylea = {
-    maxHeight: showAlla ? '1000px' : '200px',
-    transition: 'max-height 0.5s ease', 
-  }
-
-  const containerStyleb = {
-    maxHeight: showAllb ? '1000px' : '200px',
-    transition: 'max-height 0.5s ease', 
-  }
-
-
   return (
     <Layout>
       <div className={style.dashboard}>
@@ -36,7 +25,7 @@ function Dashboard() {
           <button onClick={() => setShowAlla(!showAlla)} className={style.viewbutton}>
             {showAlla ? 'Show Less' : 'View All'}
           </button>
-          <div className={style.dashboard_otts_list} style={containerStylea}>
+          <div className={style.dashboard_otts_list}>
             {visibleData.map((item, index) => (
               <Dashboardcard  
                 key={index}
@@ -57,7 +46,7 @@ function Dashboard() {
           <button onClick={() => setShowAllb(!showAllb)} className={style.viewbutton}>
             {showAllb ? 'Show Less' : 'View All'}
           </button>
-          <div className={style.dashboard_otts_list} style={containerStyleb}>
+          <div className={style.dashboard_otts_list}>
             {visibleDatab.map((item, index) => (
               <Dashboardcard
                 key={index}
