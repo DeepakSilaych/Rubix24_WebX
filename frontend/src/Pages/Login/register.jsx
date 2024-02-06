@@ -1,44 +1,57 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const RegisterForm = ({changeLoginState}) => {
 
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        password: "",
-        passwordCheck: "",
+  const navigate = useNavigate();
+
+
+  const [formData, setFormData] = useState({
+      name: "",
+      email: "",
+      password: "",
+      passwordCheck: "",
+  });
+
+  const [error, setError] = useState("")
+  const errorStyle = {
+      color: error === "Password Matched" ? "green" : "red",
+      fontSize: "small",
+      fontStyle: "italic"
+  }
+
+  function passwordCheck(password) {
+      if (formData.password !== password) {
+          setError("Passwords do not match")
+      }
+      else {
+          setError("Password Matched")
+      }
+      setFormData({ ...formData, passwordCheck: password })
+  }
+
+
+  function handleRegister() {
+      const { name, email, password, mobile } = formData;
+
+
+      axios.post("http://127.0.0.1:8000/api/auth/register/",{
+        name: name,
+        email: email,
+        password: password,
+    })
+    .then(response => {
+      localStorage.setItem('accessToken', response.data.access);
+      localStorage.setItem('refreshToken', response.data.refresh);
+      console.log(response.data);
+      navigate("/dashboard");
+    })
+    .catch(error => {
+      console.log(error);
+      alert("Error");
     });
-
-    const [error, setError] = useState("")
-    const errorStyle = {
-        color: error === "Password Matched" ? "green" : "red",
-        fontSize: "small",
-        fontStyle: "italic"
-    }
-
-    function passwordCheck(password) {
-        if (formData.password !== password) {
-            setError("Passwords do not match")
-        }
-        else {
-            setError("Password Matched")
-        }
-        setFormData({ ...formData, passwordCheck: password })
-    }
-
-
-    function handleRegister() {
-        const { name, email, password, mobile } = formData;
-        axios.post("http://localhost:3001/auth/register", data)
-        .then((res) => {
-            console.log(res.data);
-            alert("Registered Successfully")
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    }
+  }
 
     return (
         <div className="w-full h-full">

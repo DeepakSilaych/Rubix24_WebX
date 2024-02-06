@@ -4,16 +4,16 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseU
 from OTTsubcription.models import *
 
 class UserManager(BaseUserManager):
-    def create_user(self, username, email, password, **extra_fields):
+    def create_user(self, email, password, **extra_fields):
         if not email:
             raise ValueError('The Email field must be set')
         email = self.normalize_email(email)
-        user = self.model(username=username, email=self.normalize_email(email), created=datetime.now())
+        user = self.model(email=self.normalize_email(email), created=datetime.now())
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, username, email, password):
+    def create_superuser(self, email, password):
         if not email:
             raise ValueError('The Email field must be set')
         if not password:
@@ -21,15 +21,15 @@ class UserManager(BaseUserManager):
         if not email:
             raise ValueError('The Email field must be set')
         
-        user = self.create_user(username, email, password)
+        user = self.create_user(email, email, password)
         user.is_superuser = True
         user.is_staff = True
         user.save(using=self._db)
         return user
     
-    def authenticate(self, request, username, password):
+    def authenticate(self, request, email, password):
         try:
-            user = User.objects.get(email=username)
+            user = User.objects.get(email=email)
             if user.check_password(password):
                 return user
         except User.DoesNotExist:
@@ -43,7 +43,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     name = models.CharField(max_length=50, blank = False, null = False)
-    username = models.CharField(max_length=70, unique= True, null = True, blank = False)
+    # username = models.CharField(max_length=70, unique= True, null = True, blank = False)
     email = models.CharField(max_length=50, unique = True, null = True, blank = True)
     created = models.DateTimeField(auto_now_add=True, null = False, blank = False)
     is_staff = models.BooleanField(default=False)
@@ -51,7 +51,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     friends = models.ManyToManyField('self', blank=True, symmetrical=True)
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = ['name']
 
     objects = UserManager()
 

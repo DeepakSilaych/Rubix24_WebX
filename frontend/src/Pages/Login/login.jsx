@@ -7,7 +7,6 @@ const LoginForm = ({changeLoginState}) => {
   const navigate = useNavigate();
 
   function handleLogin(e) {
-    console.log(detail);
 
     // axios.post("http://127.0.0.1:8000/api/auth/login/", detail)
     // .then((res) => {

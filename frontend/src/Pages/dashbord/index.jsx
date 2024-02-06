@@ -1,16 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../component/layout';
 import Dashboardcard from './dashboardcard';
 import style from './style.module.css';
 import BarChart from './chart';
+import axios from 'axios';
+import { useAuth } from '../../AuthContext'; 
 
 function Dashboard() {
+  const { accessToken, refreshToken, login, logout } = useAuth();
+
   const [showAlla, setShowAlla] = useState(false);
   const [showAllb, setShowAllb] = useState(false);
 
 
   const visibleData = showAlla ? data : data.slice(0, 5);
   const visibleDatab = showAllb ? data : data.slice(0, 5);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/home/current_subscriptions/', {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
+        console.log(response.data);
+      } catch (error) {
+        if (error.response.status === 401) {
+          try {
+            const refreshResponse = await axios.post('http://127.0.0.1:8000/api/auth/refresh/', {
+              refresh: refreshToken,
+            });
+            localStorage.setItem('accessToken', refreshResponse.data.access);
+            localStorage.setItem('refreshToken', refreshResponse.data.refresh);
+          } catch (refreshError) {
+            console.log(refreshError);
+          }
+        }
+        console.log(error);
+      }
+    };
+  
+    fetchData();
+  }, [accessToken, refreshToken]);
+  
+
 
 
   return (
